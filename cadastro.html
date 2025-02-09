@@ -1,27 +1,46 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tecmania.com</title>
+
+    <title>Fazer cadastro</title>
+
+    <link rel="stylesheet" href="visual.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,800&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <img src="imagens/Tecmanialogo.jpg"  width="280" height="160">
-<nav>
-   <a href="login.html">Fazer login</a>
-   <br>
-   <a href="publicar.html">Publicar</a>
-   <br>
-   <a href="cadastro.html">cadastra-se</a>
-   <br>
-   <a href="index.html">Inicio</a>
-   <br>
-   <a href="login.html">Admin</a>
-</nav>
-    <h1>
+
+ <div class="container"> <header>
+       <div id="h-titulo"><h1>Tecmania</h1></div>
+    </header></div>
+    <nav class="menu">
+        <ul>
+        <li><a href="index.html">Início</a></li> 
+        
+        <li><a href="detalhes.html">Detalhes</a></li>
+        
+        <li><a href="autor.html">Sobre</a></li>
+        
+        <li><a href="cadastro.html">Cadastra-se</a></li>
+        
+        <li><a href="login.html">Admin</a></li>
+        </ul>
+    </nav>
+    
+    <h3 class="h3">
+
         Cadastre-se no site!
-    </h1>
-      <form method="POST">
+
+    </h3>
+
+     
+  <form method="POST">
         <label for="nome">Nome:</label>
         <input type="text" id="nome" name="nome" required="nome"><br><br>
       
@@ -37,7 +56,7 @@
         <button type="submit">Cadastrar</button>
      </form> 
      <br><br>
-     <h3>Lista de usúarios cadastrados:</h3>
+     <h3 class="h3-table">Lista de usúarios cadastrados:</h3>
    <table border="1">
        <thead>
            <tr>
@@ -75,12 +94,18 @@
            
        </tbody> 
    </table>
-    <br><br>
+    <br><br><br><br><br>
     <footer>
-        <p>Feito por Natiel Silva</p>
-        <a href="autor.html">Sobre o autor</a>
-        <br><br>
-        &copy 2025 Copyright Tecmania
-    </footer>
+    <div class="footer-content">
+        <div class="footer-section about">
+            <h3>Sobre a Tecmania</h3>
+            <p>A Tecmania é seu portal de notícias sobre tecnologia, gadgets, jogos e muito mais. Fique por dentro das novidades do mundo tech!</p>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Tecmania. Todos os direitos reservados. Feito por <a href="autor.html">Natiel Silva</a>.</p>
+    </div>
+</footer>
+
 </body>
-</html>
+
+                                                            </html>
