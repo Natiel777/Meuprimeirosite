@@ -1,126 +1,106 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Postar conteúdo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administração</title>
+    <link rel="stylesheet" href="visual.css">
 </head>
-<body>
-  
-  <img src="imagens/Tecmanialogo.jpg" alt="logo do site" width="280" height="160">
-    <nav> 
-        <a href="login.html">Fazer login</a>
-        <br>
-        <a href="cadastro.html">cadastra-se</a>
-        <br>
-        <a href="publicar.html">Publicar</a>
-        <br>
-        <a href="index.html">Inicio</a>
+<body class="admin-page">
+    <header>
+        <img src="imagens/logo.png" class="logo">
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#Inicio">Início</a></li>
+            <li><a href="#Sobre">Sobre</a></li>
+            <li><a href="#detalhes">Detalhes</a></li>
+            <li><a href="#Cadastra-se">Cadastra-se</a></li>
+            <li><a href="#Admin">Admin</a></li>
+        </ul>
     </nav>
-  <h2>
-    Publicar conteúdos:
-  </h2>
-  
-    <form method="POST">
-        <label for="titulo">Título do Conteúdo:</label>
-        <input type="text" id="titulo" name="titulo" required><br><br>
 
-        <label for="detalhes">Detalhes:</label>
-        <textarea id="detalhes" name="detalhes" rows="4" cols="50" 
-placeholder="Digite aqui os detalhes..."></textarea>
-        <br><br>
-      
-        <label for="categoria">Categoria:</label>
-        <select id="categoria" name="categoria">
-        <option value="news">Notícias</option>
-        <option value="now">Novidades</option>
-        <option value="game">Gamers</option>
-        </select>
-        <br><br>
+    <main>
         
-        <label for="data">Data de Publicação:</label>
-        <input type="date" id="data" name="data" required><br><br>
+        <section id="formulario-postagem">
+            <h2>Nova Postagem</h2>
+            <form>
+                <label for="titulo">Título da Publicação:</label>
+                <input type="text" id="titulo" name="titulo" required>
 
-        <button type="submit">Publicar</button>
-    </form>
-  
-    <h3>Lista de postagens:</h3>
-     
-   <table border="1">
-        <thead>
-            <tr>
-                <th>Título</th>
-                <th>Data de publicação</th> 
-            </tr>
-        </thead>
-       <tbody>
-            <tr>
-                <td>Conheça o novo Samsung Galaxy S25; vazamento confirma rumores
-</td>
-                <td>2025-01-10</td>
-                <td>
-                    <button>Editar</button>
-                    <button>Apagar</button>
-                </td> 
-            </tr>
-             
-            <tr>
-                <td>Xiaomi lança POCO X7 Pro e X7 no Brasil; veja preços
-</td>
-                <td>2025-01-09</td>
-                <td>
-                    <button>Editar</button>
-                    <button>Apagar</button>
-                </td>
-            </tr>
-          
-          <tr>
-            <td>Governo recua e vai revogar fiscalização do Pix após repercussão negativa e fake news
- </td>
-            <td>2025-01-08</td>
-            <td>
-               <button>Editar</button>
-               <button>Apagar</button>
-            </td>
-          </tr>
-          
-         <tr>
-           <td>PS Plus terá God of War Ragnarok e mais 10 jogos de peso! Veja a lista de janeiro
-</td>
-           <td>2025-01-08</td>
-           <td>
-             <button>Editar</button>
-             <button>Apagar</button>   
-           </td>
-         </tr>
-         
-         <tr>
-           <td>Presentes para Cuidar: Veja os 5 produtos tech da Huawei</td>
-           <td>2025-01-07</td>
-           <td>
-             <button>Editar</button>
-             <button>Apagar</button>   
-           </td>
-         </tr>
-         
-         <tr>
-           <td>Steam libera jogo grátis por tempo limitado com ótimas avaliações! Resgate agora
-</td>
-           <td>2025-01-06</td>
-           <td>
-             <button>Editar</button>
-             <button>Apagar</button>   
-           </td>
-         </tr>
-      </tbody>
-    </table>
-  
-  <br><br>
-  
-  <footer>
-        <p>Feito por Natiel Silva</p>
-        <a href="autor.html">Sobre o autor</a>
-        <br><br>
-        &copy 2025 Copyright Tecmania
+                <label for="detalhes">Detalhes da Publicação:</label>
+                <textarea id="detalhes" name="detalhes" required></textarea>
+
+                <label for="categoria">Categoria da Postagem:</label>
+                <select id="categoria" name="categoria" required>
+                    <option value="noticias">Notícias</option>
+                    <option value="tutoriais">Tutoriais</option>
+                    <option value="eventos">Eventos</option>
+                </select>
+
+                <label for="data">Data da Publicação:</label>
+                <input type="date" id="data" name="data" required>
+
+                <button type="submit">Publicar</button>
+            </form>
+        </section>        
+      
+        <section id="tabela-postagens">
+            <h2>Postagens</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Título da Publicação</th>
+                        <th>Data da Publicação</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Exemplo de Título</td>
+                        <td>2025-02-12</td>
+                        <td>
+                            <button class="editar">Editar</button>
+                            <button class="apagar">Apagar</button>
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+              
+        <section id="tabela-usuarios">
+            <h2>Usuários Cadastrados</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome do Usuário</th>
+                        <th>Email</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Natiel Silva</td>
+                        <td>natiel@example.com</td>
+                        <td>
+                            <button class="editar">Editar</button>
+                            <button class="apagar">Apagar</button>
+                        </td>
+                    </tr>                   
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Tecmania. Todos os direitos reservados.</p>
+            <div class="social-links">
+                <p>Feito por <a href="#sobre">Natiel Silva</a></p>
+            </div>
+        </div>
     </footer>
 </body>
-</html>
+                                         </html>
