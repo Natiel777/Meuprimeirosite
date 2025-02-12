@@ -1,111 +1,76 @@
 <!DOCTYPE html>
-
-<html lang="en">
-
+<html lang="pt-BR">
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Fazer cadastro</title>
-
+    <title>Formulário de cadastro</title>
     <link rel="stylesheet" href="visual.css">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,800&display=swap" rel="stylesheet">
 </head>
-
-<body>
-
- <div class="container"> <header>
-       <div id="h-titulo"><h1>Tecmania</h1></div>
-    </header></div>
-    <nav class="menu">
-        <ul>
-        <li><a href="index.html">Início</a></li> 
-        
-        <li><a href="detalhes.html">Detalhes</a></li>
-        
+<body class="cadastro-page">
+    <header>       
+        <img src="imagens/logo.png" class="logo">
+    </header>
+    <nav>
+   <ul>
+        <li><a href="main.html">Início</a></li>
         <li><a href="autor.html">Sobre</a></li>
-        
+        <li><a href="detalhes.html">Detalhes<a><li>
         <li><a href="cadastro.html">Cadastra-se</a></li>
-        
-        <li><a href="login.html">Admin</a></li>
-        </ul>
+        <li><a href="login.html">Faça login</a></li>
+        <li><a href="publicar.html">Admin</a></li>
+      </ul>
     </nav>
     
-    <h3 class="h3">
-
-        Cadastre-se no site!
-
-    </h3>
-
-     
-  <form method="POST">
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" required="nome"><br><br>
-      
-        <label for="email">E-mail:</label>
-        <input type="text" id="email" name="email" required="email"><br><br>
-      
-        <label for="telefone">Telefone:</label>
-        <input type="text" id="telefone" name="telefone" required="telefone"><br><br>
-        
-        <label for="nome">Senha:</label>
-        <input type="text" id="senha" name="senha" required="senha"><br><br>
-      
-        <button type="submit">Cadastrar</button>
-     </form> 
-     <br><br>
-     <h3 class="h3-table">Lista de usúarios cadastrados:</h3>
-   <table border="1">
-       <thead>
-           <tr>
-               <th>Nome dos usúarios</th>
-               <th>E-mail</th>
-           </tr>
-       </thead>
-       <tbody>
-           <tr>
-               <td>João123</td>
-               <td>João123@gmail.com</td>
-               <td>
-                   <button>Editar</button>
-                   <button>Apagar</button>
-               </td>
-           </tr>
-           
-           <tr>
-               <td>Bielzin1234</td>
-               <td>gabi1234@gmail.com</td>
-               <td>
-                   <button>Editar</button>
-                   <button>Apagar</button>
-               </td>
-           </tr>
-           
-           <tr>
-               <td>Mariabr</td>
-               <td>mariaclara12@gmail.com</td>
-               <td>
-                   <button>Editar</button>
-                   <button>Apagar</button>
-               </td>
-           </tr>
-           
-       </tbody> 
-   </table>
-    <br><br><br><br><br>
+    <main class="container">
+        <form class="cadastro-form">
+            <h2>Cadastro</h2>
+            
+            <div class="input-box">
+                <input placeholder="Nome completo" type="text"> 
+            </div>
+            
+            <div class="input-box">
+                <input placeholder="E-mail" type="email">           
+            </div>
+            
+            <div class="input-box">
+                <input placeholder="Telefone" type="tel">    
+            </div>
+            
+            <div class="input-box">
+                <input placeholder="Senha" type="password"> 
+            </div>
+            
+            <div class="gender-options">
+                <label class="gender-item">
+                    <input type="checkbox" name="gender">
+                    <span>Masculino</span>
+                </label>
+                <label class="gender-item">
+                    <input type="checkbox" name="gender">
+                    <span>Feminino</span>
+                </label>
+                <label class="gender-item">
+                    <input type="checkbox" name="gender">
+                    <span>Outros</span>
+                </label>
+                <label class="gender-item">
+                    <input type="checkbox" name="gender">
+                    <span>Prefiro não dizer</span>
+                </label>
+            </div>
+            
+            <button type="submit">Cadastrar</button>
+        </form>
+    </main>
+    
     <footer>
-    <div class="footer-content">
-        <div class="footer-section about">
-            <h3>Sobre a Tecmania</h3>
-            <p>A Tecmania é seu portal de notícias sobre tecnologia, gadgets, jogos e muito mais. Fique por dentro das novidades do mundo tech!</p>
-    </div>
-    <div class="footer-bottom">
-        <p>&copy; 2025 Tecmania. Todos os direitos reservados. Feito por <a href="autor.html">Natiel Silva</a>.</p>
-    </div>
-</footer>
-
+        <div class="footer-content">
+            <p>&copy; 2025 Tecmania. Todos os direitos reservados.</p>
+            <div class="social-links">
+              <p>Feito por<a href="#sobre">Natiel silva</a></p>                         
+            </div>            
+        </div>
+    </footer>
 </body>
-
-                                                            </html>
+        </html>
