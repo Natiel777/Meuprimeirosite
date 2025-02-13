@@ -4,11 +4,14 @@
     box-sizing: border-box;
 }
 :root {
-    --cor-fundo: #f9f9f9;
+    --cor-fundo: #f9f9f9; 
     --cor-principal: #004d73;
     --cor-secundaria: #006a99;
-      
+    --cor-escura: #333;
+    --cor-links: #ff9800;
 }
+
+/* Cabeçalho do site */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
@@ -59,6 +62,7 @@ nav a:hover {
     color: #ffc107;
 }
 
+/* Parte principal do site*/
 main {
     max-width: 1200px;
     margin: 0 auto;
@@ -126,14 +130,15 @@ button:hover {
     background-color: #ffc107;
 }
 
+/* Rodapé do site*/
 footer {
     background-color: #333;
     color: white;
     text-align: center;
     padding: 1.5rem;
-    position: ;
     bottom: 0;
     width: 100%;
+    position: fixed;
 }
 
 .footer-content {
@@ -158,6 +163,7 @@ footer {
     border-radius: 10px;
 }
 
+/* Postagem da página detalhes*/
 .destaque-titulo {
     font-size: 2rem;
     margin-bottom: 20px;
@@ -251,7 +257,7 @@ article p {
 .login-page .input-box input {
     width: 100%;
     padding: 15px 45px 15px 20px;
-    border: 2px solid #e0e0e0;
+    border: 2px solid var(--cor-secundaria);
     border-radius: 8px;
     font-size: 16px;
     transition: all 0.3s ease;
@@ -274,7 +280,7 @@ article p {
     background: var(--cor-secundaria);
     width: 100%;
     padding: 15px;
-    color: white;
+    color: #fff;
     border: none;
     border-radius: 8px;
     font-size: 16px;
@@ -410,6 +416,14 @@ article p {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
+    
+}
+#formulario-postagem h2 {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-fundo);
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid
 }
 
 #formulario-postagem input[type="text"],
@@ -458,7 +472,8 @@ table td {
 }
 
 table th {
-    background-color: #f8f9fa;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-fundo);
 }
 
 button.editar,
@@ -487,4 +502,8 @@ button.editar:hover {
 button.apagar:hover {
     background-color: #c82333;
 }
+
+
+
+
 
