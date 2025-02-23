@@ -3,41 +3,52 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 :root {
-    --cor-fundo: #f9f9f9; 
+    --cor-fundo: #f9f9f9;
     --cor-principal: #004d73;
     --cor-secundaria: #006a99;
     --cor-escura: #333;
     --cor-links: #ff9800;
 }
 
-/* Cabeçalho do site */
+html {
+    height: 100%;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: #333;
-    background-color: #f9f9f9;
+    background-color: var(--cor-fundo);
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    margin: 0;
+    overflow-x: hidden;
+    max-width: 100vw;
 }
 
+/* Cabeçalho */
 header {
     background-color: var(--cor-principal);
     color: white;
     text-align: center;
     padding: 1rem;
+    grid-row: 1;
 }
+
 .logo {
     width: auto;
-    height:40px;
-    
+    height: 40px;
+    max-width: 100%;
 }
 
-header p {
-    font-size: 1.2rem;
-}
-
+/* Menu de navegação */
 nav {
     background-color: var(--cor-secundaria);
     padding: 1rem;
+    grid-row: 2;
 }
 
 nav ul {
@@ -46,9 +57,8 @@ nav ul {
     justify-content: flex-start;
     gap: 0.5rem;
     flex-wrap: wrap;
-    padding-left: 30px;
+    padding: 0 15px;
     width: 100%;
-    
 }
 
 nav a {
@@ -56,23 +66,102 @@ nav a {
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s;
+    white-space: nowrap;
 }
 
 nav a:hover {
     color: #ffc107;
 }
 
-/* Parte principal do site*/
+/* Menu hambúrguer */
+#menu-toggle {
+    display: none;
+}
+
+.hamburger-icon {
+    display: none;
+    cursor: pointer;
+    padding: 10px;
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1001;
+}
+
+.hamburger-icon span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: transform 0.4s, opacity 0.4s;
+}
+
+@media screen and (max-width: 768px) {
+    .hamburger-icon {
+        display: block;
+    }
+
+    nav {
+        padding-left: 4rem; 
+        position: relative;
+        min-height: 50px;
+    }
+
+    nav ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--cor-secundaria);
+        flex-direction: column;
+        gap: 0;
+        padding: 0;
+        z-index: 1000;
+    }
+
+    #menu-toggle:checked ~ ul {
+        display: flex;
+    }
+
+    nav ul li {
+        text-align: left; 
+        padding: 0.5rem 1rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 0.8rem 0;
+    }
+
+    #menu-toggle:checked ~ .hamburger-icon span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    #menu-toggle:checked ~ .hamburger-icon span:nth-child(2) {
+        opacity: 0;
+    }
+
+    #menu-toggle:checked ~ .hamburger-icon span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+/* Conteúdo principal */
 main {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem 1rem;
-    padding-bottom: 100px; 
+    width: 100%;
+    grid-row: 3;
+    overflow-x: hidden;
 }
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
     gap: 2rem;
     margin: 2rem 0;
 }
@@ -84,6 +173,7 @@ main {
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     transition: transform 0.3s;
+    overflow: hidden;
 }
 
 .card:hover {
@@ -98,9 +188,10 @@ main {
     margin-bottom: 1rem;
 }
 
+/* Botões */
 .btn-card {
     display: inline-block;
-    background-color: #006a99;
+    background-color: var(--cor-secundaria);
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 5px;
@@ -109,36 +200,18 @@ main {
     transition: background-color 0.3s;
 }
 
-.btn-card a:hover {
-    background-color: #004d73;
-    transition: color 0.3s;
-    color: orange;
+.btn-card:hover {
+    background-color: var(--cor-principal);
 }
 
-
-button {
-    background-color: #006a99;
-    color: white;
-    padding: 0.8rem 2rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #ffc107;
-}
-
-/* Rodapé do site*/
+/* Rodapé */
 footer {
-    background-color: #333;
+    background-color: var(--cor-escura);
     color: white;
     text-align: center;
     padding: 1.5rem;
-    bottom: 0;
     width: 100%;
-    position: fixed;
+    grid-row: 4;
 }
 
 .footer-content {
@@ -147,7 +220,7 @@ footer {
 }
 
 .social-links a {
-    color: #ff9800;
+    color: var(--cor-links);
     text-decoration: none;
     margin: 0 0.5rem;
 }
@@ -156,18 +229,18 @@ footer {
     text-decoration: underline;
 }
 
+/* Destaque postagem */
 .destaque {
     text-align: center;
     padding: 20px;
-    background-color: #f9f9f9;
+    background-color: var(--cor-fundo);
     border-radius: 10px;
 }
 
-/* Postagem da página detalhes*/
 .destaque-titulo {
     font-size: 2rem;
     margin-bottom: 20px;
-    color: #333;
+    color: var(--cor-escura);
     font-weight: bold;
 }
 
@@ -194,22 +267,27 @@ footer {
     text-decoration: none;
     border-radius: 5px;
     font-size: 1rem;
+    transition: background-color 0.3s;
 }
 
 .btn-destaque:hover {
     background-color: var(--cor-principal);
 }
 
+/* Artigos */
 article {
     background-color: white;
-    padding: 20px
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 2rem;
 }
 
 article h3 {
     font-size: 24px;
+    margin-bottom: 15px;
 }
 
-article img{
+article img {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
@@ -218,10 +296,10 @@ article img{
 
 article p {
     margin-bottom: 15px;
-    border-radius: 8px;
+    line-height: 1.8;
 }
 
-.novidades-btn{
+.novidades-btn {
     display: inline-block;
     padding: 10px 20px;
     background-color: var(--cor-secundaria);
@@ -229,14 +307,19 @@ article p {
     text-decoration: none;
     border-radius: 5px;
     font-size: 1rem;
+    transition: background-color 0.3s;
 }
 
+.novidades-btn:hover {
+    background-color: var(--cor-principal);
+}
+
+/* Página de login */
 .login-page main.container {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 50vh;
-    
 }
 
 .login-page form {
@@ -261,10 +344,11 @@ article p {
     border-radius: 8px;
     font-size: 16px;
     transition: all 0.3s ease;
+    max-width: 100%;
 }
 
 .login-page .input-box input:focus {
-    border-color: #004d73;
+    border-color: var(--cor-principal);
     box-shadow: 0 0 8px rgba(0,77,115,0.2);
 }
 
@@ -289,42 +373,45 @@ article p {
 }
 
 .login-page button[type="submit"]:hover {
-    background: orange;
+    background: var(--cor-links);
 }
 
-
 .login-page form h2 {
-    color: black; 
+    color: var(--cor-escura);
     margin-bottom: 2rem;
     font-size: 2em;
 }
 
+.login-page .remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0;
+}
 
 .login-page .remember-forgot a {
-    color: orange; 
+    color: var(--cor-links);
     text-decoration: none;
     transition: color 0.3s;
 }
 
 .login-page .remember-forgot a:hover {
-    color: #ff6b6b; 
-    text-decoration: underline;
+    color: #ff6b6b;
 }
-.login-page .remember-forgot label {
-    color: black;
-    font-size: 0.9em;
-}
-.login-page .register-link p {
-    color: black; 
-    margin-top: 1.5rem;
+
+.login-page .register-link {
     text-align: center;
+    margin-top: 25px;
 }
+
 .login-page .register-link a {
-    color: orange; 
+    color: var(--cor-links);
     font-weight: 600;
     text-decoration: none;
     transition: all 0.3s;
 }
+
+/* Página de cadstro */
 .cadastro-page main.container {
     display: flex;
     justify-content: center;
@@ -354,11 +441,11 @@ article p {
     border-radius: 8px;
     font-size: 16px;
     transition: all 0.3s ease;
+    max-width: 100%;
 }
 
 .cadastro-page .input-box input:focus {
-    border-color: #004d73;
-    box-shadow: 0 0 8px rgba(0,77,115,0.2);
+    border-color: var(--cor-principal);
 }
 
 .cadastro-page .gender-options {
@@ -372,24 +459,10 @@ article p {
     display: flex;
     align-items: center;
     gap: 8px;
-    cursor: pointer;
-    color: #444;
-    transition: all 0.3s ease;
-}
-
-.cadastro-page .gender-item input[type="checkbox"] {
-    accent-color: #004d73;
-    width: 18px;
-    height: 18px;
-    cursor: pointer;
-}
-
-.cadastro-page .gender-item:hover {
-    color: #006a99;
 }
 
 .cadastro-page button[type="submit"] {
-    background: #006a99;
+    background: var(--cor-secundaria);
     width: 100%;
     padding: 15px;
     color: white;
@@ -401,88 +474,74 @@ article p {
 }
 
 .cadastro-page button[type="submit"]:hover {
-    background: #006a99;
+    background: var(--cor-principal);
 }
 
+/* Administração */
 #formulario-postagem {
     background-color: #fff;
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    overflow-x: hidden;
 }
 
 #formulario-postagem label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
-    
 }
+
 #formulario-postagem h2 {
     background-color: var(--cor-secundaria);
     color: var(--cor-fundo);
     padding: 10px;
-    text-align: left;
-    border-bottom: 1px solid
+    margin-bottom: 15px;
 }
 
-#formulario-postagem input[type="text"],
+#formulario-postagem input,
 #formulario-postagem textarea,
-#formulario-postagem select,
-#formulario-postagem input[type="date"] {
+#formulario-postagem select {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
-}
-
-#formulario-postagem button {
-    background-color: #28a745;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-#formulario-postagem button:hover {
-    background-color: #218838;
+    max-width: 100%;
 }
 
 #tabela-postagens,
 #tabela-usuarios {
-    background-color: #fff;
-    padding: 20px;
+    width: 100%;
+    overflow-x: auto;
     margin-bottom: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
+    min-width: 600px;
 }
 
-table th,
-table td {
-    padding: 10px;
+th, td {
+    padding: 12px;
     text-align: left;
     border-bottom: 1px solid #ddd;
 }
 
-table th {
+th {
     background-color: var(--cor-secundaria);
-    color: var(--cor-fundo);
+    color: white;
 }
 
 button.editar,
 button.apagar {
-    padding: 5px 10px;
-    margin-right: 5px;
+    padding: 8px 15px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    transition: opacity 0.3s;
 }
 
 button.editar {
@@ -495,15 +554,34 @@ button.apagar {
     color: white;
 }
 
-button.editar:hover {
-    background-color: #e0a800;
+/* Responsividade */
+@media screen and (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .card {
+        margin: 0 10px;
+    }
+    
+    nav ul {
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    .destaque-titulo {
+        font-size: 1.8rem;
+    }
 }
 
-button.apagar:hover {
-    background-color: #c82333;
+@media screen and (max-width: 480px) {
+    .login-page form,
+    .cadastro-page .cadastro-form {
+        padding: 25px;
+    }
+    
+    .card img {
+        height: 180px;
+    }
 }
-
-
-
-
 
