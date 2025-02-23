@@ -8,81 +8,90 @@
 </head>
 <body>
     <header>       
-        <img src="imagens/logo.png" class="logo">
+        <img src="imagens/logo.png" alt="Logo Tecmania" class="logo">
+        
     </header>
     <nav>
-      <ul>
+    <input type="checkbox" id="menu-toggle" />
+    <label for="menu-toggle" class="hamburger-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+    <ul>
         <li><a href="main.html">Início</a></li>
         <li><a href="autor.html">Sobre</a></li>
-        <li><a href="detalhes.html">Detalhes<a><li>
+        <li><a href="detalhes.html">Detalhes</a></li>
         <li><a href="cadastro.html">Cadastra-se</a></li>
         <li><a href="login.html">Faça login</a></li>
         <li><a href="publicar.html">Admin</a></li>
-            <li><a href="index_2.html">Página inicial 2</a></li>
-      </ul>
-    </nav>
- <main>
-   <section class="destaque">
-    <h2 class="destaque-titulo">Em destaque</h2>
-    <img src="imagens/god.jpg" alt="Imagem do Destaque" class="destaque-imagem">
-    <p class="destaque-texto">God of War Ragnarok chega ao PS Plus! Veja 10 dicas pra começar bem</p>
-    <a href="#promocao" class="btn-destaque">Confira detalhes</a>
-</section>
-        
-  <section class="conteudos">
-    <div class="grid">
-        <!-- Conteúdo 1 -->
-      <article class="card">
-         <img src="imagens/pix.jpg" alt="Imagem do pix">
-        <h4>Governo recua e vai revogar fiscalização do Pix após repercussão negativa e fake news</h4>
-            <a href="#conteudo1" class="btn-card">Confira detalhes</a>
-        </article>
+        <li><a href="index_2.html">Página inicial 2</a></li>
+    </ul>
+</nav>
+    
 
-        <!-- Conteúdo 2 -->
-        <article class="card">
-            <img src="imagens/Assassins-Creed.jpg" alt="Imagem do assassin's'">
-            <h4>Assassin’s Creed Shadows terá modo imersivo</h4>
-            <a href="detalhes.html" class="btn-card">Confira detalhes</a>
-        </article>
+    <main>
+        <section class="destaque">
+            <h2 class="destaque-titulo">Em destaque</h2>
+            <img src="imagens/god.jpg" alt="God of War Ragnarok" class="destaque-imagem">
+            <p class="destaque-texto">God of War Ragnarok chega ao PS Plus! Veja 10 dicas pra começar bem</p>
+            <a href="#promocao" class="btn-destaque">Confira detalhes</a>
+        </section>
 
-        <!-- Conteúdo 3 -->
-        <article class="card">
-            <img src="imagens/xiaomi.png" alt="Imagem do xiaomi">
-            <h4>Xiaomi apresenta detalhes do novo Xiaomi 14; smartphone também terá versão Pro</h4>
-            
-            <a href="#conteudo3" class="btn-card">Confira detalhes</a>
-        </article>
+        <section class="conteudos">
+            <div class="grid">
+                <!-- Conteúdo 1 -->
+                <article class="card">
+                    <img src="imagens/pix.jpg" alt="Notícia sobre Pix">
+                    <h4>Governo recua e vai revogar fiscalização do Pix após repercussão negativa e fake news</h4>
+                    <a href="#conteudo1" class="btn-card">Confira detalhes</a>
+                </article>
 
-        <!-- Conteúdo 4 -->
-        <article class="card">
-            <img src="imagens/el-hero.webp" alt="Imagem do el hero">
-            <h4>El Hero – O Battle Royale Brasileiro Que Você Precisa Conhecer</h4>
-            <a href="#conteudo4" class="btn-card">Confira detalhes</a>
-        </article>
+                <!-- Conteúdo 2 -->
+                <article class="card">
+                    <img src="imagens/assassins-creed.jpg" alt="Assassin's Creed Shadows">
+                    <h4>Assassin’s Creed Shadows terá modo imersivo</h4>
+                    <a href="detalhes.html" class="btn-card">Confira detalhes</a>
+                </article>
 
-        <!-- Conteúdo 5 -->
-        <article class="card">
-            <img src="imagens/nitendo.jpg" alt="Imagem da nitendo">
-            <h4>Preço do Nintendo Switch 2 vaza em loja canadense</h4>
-            <a href="#conteudo5" class="btn-card">Confira detalhes</a>
-        </article>
+                <!-- Conteúdo 3 -->
+                <article class="card">
+                    <img src="imagens/xiaomi.png" alt="Xiaomi 14">
+                    <h4>Xiaomi apresenta detalhes do novo Xiaomi 14; smartphone também terá versão Pro</h4>
+                    <a href="#conteudo3" class="btn-card">Confira detalhes</a>
+                </article>
 
-        <!-- Conteúdo 6 -->
-        <article class="card">
-         <img src="imagens/tv.png" alt="Imagem da tv">
-         <h4>Como Instalar a Google Play na TV Smart</h4>
-            <a href="#conteudo6" class="btn-card">Confira detalhes</a>
-        </article>
-    </div>
-</section>
+                <!-- Conteúdo 4 -->
+                <article class="card">
+                    <img src="imagens/el-hero.webp" alt="El Hero">
+                    <h4>El Hero – O Battle Royale Brasileiro Que Você Precisa Conhecer</h4>
+                    <a href="#conteudo4" class="btn-card">Confira detalhes</a>
+                </article>
+
+                <!-- Conteúdo 5 -->
+                <article class="card">
+                    <img src="imagens/nitendo.jpg" alt="Nintendo Switch 2">
+                    <h4>Preço do Nintendo Switch 2 vaza em loja canadense</h4>
+                    <a href="#conteudo5" class="btn-card">Confira detalhes</a>
+                </article>
+
+                <!-- Conteúdo 6 -->
+                <article class="card">
+                    <img src="imagens/tv.png" alt="Google Play na TV">
+                    <h4>Como Instalar a Google Play na TV Smart</h4>
+                    <a href="#conteudo6" class="btn-card">Confira detalhes</a>
+                </article>
+            </div>
+        </section>
     </main>
+ 
+  <!--Rodapé-->
     <footer>
         <div class="footer-content">
             <p>&copy; 2025 Tecmania. Todos os direitos reservados.</p>
-            
             <div class="social-links">
-              <p>Feito por<a href="#sobre">Natiel silva</a></p>                         
-</div>            
+                <p>Feito por <a href="#sobre">Natiel Silva</a></p>                         
+            </div>            
         </div>
     </footer>
 </body>
