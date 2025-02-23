@@ -148,6 +148,7 @@ nav a:hover {
     #menu-toggle:checked ~ .hamburger-icon span:nth-child(3) {
         transform: rotate(45deg) translate(-5px, -6px);
     }
+} 
 
 /* Conteúdo principal */
 main {
@@ -187,6 +188,7 @@ main {
     border-radius: 5px;
     margin-bottom: 1rem;
 }
+
 
 /* Botões */
 .btn-card {
