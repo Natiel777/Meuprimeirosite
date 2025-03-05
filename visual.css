@@ -404,7 +404,7 @@ article p {
 }
 
 /* Página de cadastro */
-.cadastro-page main .cadastro {
+.cadastro-page main {
     display: flex;
     justify-content: center;
     align-items: center;
