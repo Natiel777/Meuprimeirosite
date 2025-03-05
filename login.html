@@ -3,42 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Faça login</title>
+    <title>Tecmania - Faça login</title>
     <link rel="stylesheet" href="visual.css">  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body class="login-page">
-    <header>       
-        <img src="imagens/logo.png" class="logo">
-    </header>
-    <nav>
+    
+ <!--Cabeçalho do site-->
+ <header>  
+    <div class="header-2">   
+    <img src="imagens/logo.png" alt="Logo Tecmania" class="logo">
+    
     <input type="checkbox" id="menu-toggle" />
     <label for="menu-toggle" class="hamburger-icon">
-        <span></span>
-        <span></span>
-        <span></span>
+       <span></span>
+       <span></span>
+       <span></span>
     </label>
-    <ul>
-        <li><a href="main.html">Início</a></li>
-        <li><a href="autor.html">Sobre</a></li>
-        <li><a href="detalhes.html">Detalhes</a></li>
-        <li><a href="cadastro.html">Cadastra-se</a></li>
-        <li><a href="login.html">Faça login</a></li>
-        <li><a href="publicar.html">Admin</a></li>
-        <li><a href="index_2.html">Página inicial 2</a></li>
-    </ul>
-</nav>
+  <nav>
+   <ul>
+     <li><a href="index.html">Home</a></li>
+     <li><a href="autor.html">Sobre</a></li>
+     <li><a href="detalhes.html">Detalhes</a></li>
+     <li><a href="cadastro.html">Cadastra-se</a></li>
+     <li><a href="login.html">login</a></li>
+  </nav>
+     </div>
+</header>
 
-    <main class="container">
-        <form>
-            <h2>Login</h2>
-            <div class="input-box">
-                <input placeholder="Nome/E-mail" type="email"> <i class="bx bxs-user"></i>              
+ <!--Fomulário de login-->
+ <main class="container">
+     <form>
+         <h2>Login</h2>
+           <div class="input-box">
+             <input placeholder="Nome/E-mail" type="email"> <i class="bx bxs-user"></i>              
             </div>
-            <div class="input-box">
-                <input placeholder="Senha"> 
-                <i class="bx bxs-lock-alt"></i>                                  
+           <div class="input-box">
+             <input placeholder="Senha"> 
+             <i class="bx bxs-lock-alt"></i>                                  
             </div>       
-
             <div class="remember-forgot">
                 <label>
                     <input type="checkbox">
@@ -46,21 +48,19 @@
                 </label>
                 <a href="#">Esqueci minha senha</a>                
             </div>       
-            <button type="submit">Entrar</button>
+         <button type="submit">Entrar</button>
             <div class="register-link">
-                <p>Não tem uma conta? <a href="#">Cadastra-se</a></p>
+                <p>Não tem uma conta? <a href="cadastro.html">Cadastra-se</a></p>
             </div>    
-        </form>                              
-
-    </main>
+   </form>                              
+ </main>
+     
+ <!--Rodapé-->
     <footer>
-        <div class="footer-content">
-            <p>&copy; 2025 Tecmania. Todos os direitos reservados.</p>
-
-            <div class="social-links">
-              <p>Feito por<a href="#sobre">Natiel silva</a></p>                         
-</div>            
+        <div class="footer-2">
+      <p>&copy; 2025 Tecmania. Todos os direitos reservados. Feito por<span class="social-links"><a href="autor.html">Natiel Silva</a></span></p>                   
+            </div>            
         </div>
     </footer>
 </body>
-        </html>
+</html>
