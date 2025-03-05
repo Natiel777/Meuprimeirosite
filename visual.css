@@ -112,7 +112,7 @@ nav ul {
    text-align: center;
 }
 
-#menu-toggle:checked ~ nav ul {
+#menu-toggle:checked + label + nav ul {
    display: flex;
 }
     
@@ -160,6 +160,7 @@ main {
     padding: 1.5rem;
     transition: transform 0.3s;
     overflow: hidden;
+    positi;
 }
 
 .post:hover {
@@ -198,7 +199,7 @@ footer {
     text-align: center;
     padding: 1.5rem;
     width: 100%;
-    grid-row: 3;
+    grid-row: 4;
 }
 
 .footer-2 {
@@ -576,7 +577,7 @@ button.apagar {
 
 #btn-publicar {
     background-color: var(--cor-secundaria); 
-    color: wvar(--cor-clara); 
+    color: var(--cor-clara); 
     font-size: 16px; 
     padding: 10px 20px;  
     border: none; 
@@ -588,5 +589,4 @@ button.apagar {
 
 #btn-publicar:hover {
     background-color: var(--cor-links); 
-    }
-    
+}
